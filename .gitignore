@@ -1,0 +1,11 @@
+# Dependencies and generated production output
+node_modules/
+dist/
+
+# macOS Finder metadata
+.DS_Store
+
+# Local environment files
+.env
+.env.*
+!.env.example

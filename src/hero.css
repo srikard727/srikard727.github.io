@@ -1,0 +1,171 @@
+#hero-react,
+#hero-react .animated-gradient {
+  position: relative;
+  width: 100%;
+  min-height: 62vh;
+}
+
+#hero-react .animated-gradient {
+  position: relative;
+  overflow: hidden;
+  background: #050505;
+}
+
+#hero-react .animated-gradient-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+#hero-react .animated-gradient-content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  width: 100%;
+  min-height: 62vh;
+  align-items: center;
+  justify-content: center;
+  padding: 72px clamp(20px, 5vw, 72px);
+}
+
+.hero-dust-layer {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.hero-liquid-nav {
+  position: absolute;
+  top: calc(100% + 30px);
+  left: 50%;
+  z-index: 5;
+  display: flex;
+  width: max-content;
+  max-width: calc(100vw - 32px);
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  transform: translateX(-50%);
+}
+
+@media (max-width: 540px) {
+  .hero-liquid-nav { gap: 8px; }
+  .hero-liquid-nav .liquid-glass-button { min-height: 44px; padding: 0 15px; font-size: 0.78rem; }
+}
+
+.hero-dust-layer .sparkles-canvas {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.65;
+}
+
+.hero-dust-layer .sparkles-canvas > canvas {
+  width: 100%;
+  height: 100%;
+}
+
+.hero-gradient-copy {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  right: auto;
+  bottom: auto;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 680px;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  text-align: center;
+}
+
+.gradient-title-eyebrow {
+  margin: 0 0 14px;
+  color: #ff9ed0;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.gradient-title h1 {
+  margin: 0;
+  color: #fff;
+  font-size: clamp(2.8rem, 7vw, 5.8rem);
+  line-height: 0.98;
+  letter-spacing: -0.05em;
+}
+
+.gradient-title {
+  width: 100%;
+  text-align: center;
+}
+
+.gradient-title-first {
+  color: #fff;
+}
+
+.gradient-title-highlight {
+  position: relative;
+  display: inline-block;
+  color: #ffb4dc;
+  background: linear-gradient(110deg, #ffb4dc 10%, #fff 35%, #b7a7ff 58%, #ff72bb 82%);
+  background-size: 220% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: title-shimmer 7s ease-in-out infinite;
+  filter: drop-shadow(0 0 22px #ff66b833);
+}
+
+.gradient-title-highlight::after {
+  content: "";
+  position: absolute;
+  left: 0.05em;
+  right: 0.02em;
+  bottom: -0.08em;
+  height: 0.06em;
+  border-radius: 999px;
+  background: linear-gradient(90deg, transparent, #ff8ac7, #a99bff, transparent);
+  opacity: 0.7;
+}
+
+@keyframes title-shimmer {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+.hero-gradient-description {
+  max-width: 560px;
+  margin: 0 0 28px;
+  color: #f4ddea;
+  font-size: clamp(1rem, 2vw, 1.2rem);
+}
+
+.hero-gradient-link {
+  display: inline-flex;
+  gap: 10px;
+  align-items: center;
+  padding: 10px 14px;
+  border: 1px solid #ffffff66;
+  border-radius: 6px;
+  color: #fff;
+  font-weight: 700;
+  text-decoration: none;
+  transition: background 180ms ease, border-color 180ms ease;
+}
+
+.hero-gradient-link:hover,
+.hero-gradient-link:focus-visible {
+  background: #ffffff1c;
+  border-color: #fff;
+}

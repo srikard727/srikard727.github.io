@@ -1,0 +1,480 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+#projects-react { isolation: isolate; max-width: 1120px; margin: 0 auto; }
+#projects-react *, #projects-react *::before, #projects-react *::after { border-style: solid; border-width: 0; border-color: currentColor; }
+#projects-react button { font: inherit; cursor: pointer; }
+#projects-react button:focus-visible { outline: 2px solid #a5b4fc; outline-offset: 4px; }
+#projects-react h3 { color: white; }
+#projects-react p { color: inherit; font-size: inherit; }
+#projects-react h4 { margin: 0; }
+#projects-react .orbit-label {
+  display: block;
+  width: 180px;
+  line-height: 1.35;
+  text-align: center;
+  overflow-wrap: anywhere;
+  text-wrap: balance;
+}
+#projects-react .project-aurora {
+  position: relative;
+  min-height: 800px;
+  overflow: hidden;
+  isolation: isolate;
+  background: transparent;
+}
+
+#projects-react .project-carousel {
+  position: relative;
+}
+
+#projects-react .project-carousel > .project-aurora {
+  min-height: 800px;
+}
+
+#projects-react .project-carousel-view {
+  animation-duration: 420ms;
+  animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+  animation-fill-mode: both;
+}
+
+#projects-react .project-carousel-view.is-next {
+  animation-name: project-carousel-view-enter-next;
+}
+
+#projects-react .project-carousel-view.is-prev {
+  animation-name: project-carousel-view-enter-prev;
+}
+
+@keyframes project-carousel-view-enter-next {
+  from {
+    opacity: 0;
+    transform: translateX(28px) scale(0.985);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes project-carousel-view-enter-prev {
+  from {
+    opacity: 0;
+    transform: translateX(-28px) scale(0.985);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+#projects-react .project-carousel-arrow {
+  position: absolute;
+  top: 50%;
+  z-index: 8;
+  display: grid;
+  width: 44px;
+  height: 44px;
+  place-items: center;
+  color: #f5eafa;
+  border: 1px solid #ffffff2e;
+  border-radius: 999px;
+  background: #0d0c18b8;
+  box-shadow: 0 8px 24px #00000045, inset 0 1px 0 #ffffff1a;
+  transform: translateY(-50%);
+  transition: background 180ms ease, transform 180ms ease;
+}
+
+#projects-react .project-carousel-arrow:hover,
+#projects-react .project-carousel-arrow:focus-visible {
+  background: #ff4fae33;
+  transform: translateY(-50%) scale(1.08);
+}
+
+#projects-react .project-carousel-arrow-left { left: 16px; }
+#projects-react .project-carousel-arrow-right { right: 16px; }
+
+#projects-react .project-carousel-status {
+  position: absolute;
+  right: 0;
+  bottom: 22px;
+  left: 0;
+  z-index: 8;
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  color: #cfc5dd;
+  font-size: 0.76rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+#projects-react .project-carousel-status span + span {
+  color: #a98ddd;
+}
+
+#projects-react .project-carousel-content {
+  display: flex;
+  min-height: 800px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 72px 12%;
+  color: #f3edf8;
+  text-align: center;
+}
+
+#projects-react .project-carousel-kicker,
+#contacts .project-carousel-kicker {
+  margin-bottom: 12px;
+  color: #d9a6ff;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+#projects-react .project-carousel-content h3,
+#contacts .contact-panel h2 {
+  margin-bottom: 34px;
+  color: #f7eefe;
+  font-size: clamp(1.8rem, 4vw, 3rem);
+}
+
+#projects-react .project-carousel-grid {
+  display: grid;
+  width: min(760px, 100%);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+#projects-react .project-carousel-grid-three {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+#projects-react .project-carousel-card {
+  display: flex;
+  min-height: 118px;
+  flex-direction: column;
+  justify-content: center;
+  gap: 8px;
+  padding: 20px;
+  border: 1px solid #ffffff1c;
+  border-radius: 18px;
+  background: #161323a6;
+  box-shadow: inset 0 1px 0 #ffffff0e;
+}
+
+#projects-react .project-carousel-card strong { color: #f7d8ff; font-size: 1.05rem; }
+#projects-react .project-carousel-card span { color: #cfc5dd; font-size: 0.9rem; line-height: 1.5; }
+
+#projects-react .interest-explorer {
+  --interest-accent: #ffacd5;
+  --interest-line: #ffacd56b;
+  --interest-glow: #ff5aaf2e;
+  display: flex;
+  min-height: 800px;
+  flex-direction: column;
+  justify-content: center;
+  padding: 72px 9% 86px;
+  color: #f6effa;
+}
+
+#projects-react .interest-explorer[data-active="1"] {
+  --interest-accent: #b4a5ff;
+  --interest-line: #b4a5ff70;
+  --interest-glow: #7864ff33;
+}
+
+#projects-react .interest-explorer[data-active="2"] {
+  --interest-accent: #93cdff;
+  --interest-line: #93cdff70;
+  --interest-glow: #4aa8ff2e;
+}
+
+#projects-react .interest-explorer-heading {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 28px;
+  text-align: center;
+}
+
+#projects-react .interest-explorer-heading h3 {
+  margin: 0;
+  color: #fff6ff;
+  font-size: clamp(2rem, 3.5vw, 2.9rem);
+  line-height: 1.12;
+  letter-spacing: -0.035em;
+  text-wrap: balance;
+}
+
+#projects-react .interest-explorer-heading > p:last-child {
+  max-width: 32rem;
+  margin: 0;
+  color: #bfb4cf;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  text-wrap: balance;
+}
+
+#projects-react .interest-explorer-stage {
+  display: grid;
+  width: 100%;
+  grid-template-columns: minmax(235px, 0.8fr) minmax(0, 1.2fr);
+  align-items: stretch;
+  gap: 22px;
+}
+
+#projects-react .interest-options {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 14px;
+}
+
+#projects-react .interest-option {
+  position: relative;
+  display: flex;
+  min-height: 96px;
+  align-items: center;
+  gap: 15px;
+  padding: 17px 20px;
+  border: 1px solid #ffffff21;
+  border-radius: 18px;
+  background: #171423ad;
+  color: #ddd4e9;
+  text-align: left;
+  box-shadow: inset 0 1px 0 #ffffff0d;
+  transition: transform 220ms ease, border-color 220ms ease, background 220ms ease, box-shadow 220ms ease;
+}
+
+#projects-react .interest-option:hover,
+#projects-react .interest-option:focus-visible {
+  transform: translateX(5px);
+  border-color: var(--interest-line);
+}
+
+#projects-react .interest-option.is-active {
+  border-color: var(--interest-line);
+  background: linear-gradient(110deg, var(--interest-glow), #171423d9 75%);
+  box-shadow: 0 10px 32px #00000036, inset 0 1px 0 #ffffff18;
+}
+
+#projects-react .interest-option-icon {
+  display: grid;
+  width: 48px;
+  height: 48px;
+  flex: none;
+  place-items: center;
+  border: 1px solid var(--interest-line);
+  border-radius: 14px;
+  background: #ffffff09;
+  color: var(--interest-accent);
+}
+
+#projects-react .interest-option-copy { display: flex; min-width: 0; flex: 1; flex-direction: column; gap: 4px; }
+#projects-react .interest-option-copy strong { color: #f7effe; font-size: 1rem; }
+#projects-react .interest-option-copy small { color: #ad9fbd; font-size: 0.78rem; }
+#projects-react .interest-option-arrow { flex: none; color: #9e8eb6; }
+#projects-react .interest-option.is-active .interest-option-arrow { color: var(--interest-accent); }
+
+#projects-react .interest-feature {
+  display: flex;
+  min-height: 425px;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: 28px;
+  border: 1px solid var(--interest-line);
+  border-radius: 24px;
+  background: radial-gradient(circle at 50% 35%, var(--interest-glow), transparent 57%), linear-gradient(150deg, #171326, #0e0d18 75%);
+  box-shadow: inset 0 1px 0 #ffffff12, 0 18px 44px #00000045;
+  text-align: center;
+  transition: border-color 260ms ease, background 260ms ease;
+}
+
+#projects-react .interest-feature-inner {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  animation: interest-feature-enter 360ms ease both;
+}
+
+#projects-react .interest-feature-art {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  margin-bottom: 12px;
+}
+
+#projects-react .interest-feature-ring {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border: 1px solid var(--interest-line);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#projects-react .interest-feature-ring::after {
+  position: absolute;
+  top: -4px;
+  left: 50%;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--interest-accent);
+  box-shadow: 0 0 12px var(--interest-accent);
+  content: "";
+}
+
+#projects-react .interest-feature-ring-outer { width: 192px; height: 192px; animation: interest-ring-turn 24s linear infinite; }
+#projects-react .interest-feature-ring-inner { width: 142px; height: 142px; opacity: 0.65; animation: interest-ring-turn 18s linear infinite reverse; }
+
+#projects-react .interest-feature-core {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: grid;
+  width: 92px;
+  height: 92px;
+  place-items: center;
+  border: 1px solid var(--interest-line);
+  border-radius: 28px;
+  background: #ffffff0c;
+  color: var(--interest-accent);
+  box-shadow: 0 0 32px var(--interest-glow), inset 0 1px 0 #ffffff1d;
+  transform: translate(-50%, -50%);
+}
+
+#projects-react .interest-feature-index {
+  color: var(--interest-accent);
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+}
+
+#projects-react .interest-feature h4 {
+  margin: 10px 0;
+  color: #fff8ff;
+  font-size: clamp(1.5rem, 3vw, 2.3rem);
+}
+
+#projects-react .interest-feature p {
+  max-width: 360px;
+  margin: 0;
+  color: #cfc2dc;
+  font-size: 0.94rem;
+  line-height: 1.6;
+}
+
+@keyframes interest-feature-enter {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes interest-ring-turn {
+  from { transform: translate(-50%, -50%) rotate(0deg); }
+  to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+#contacts .project-carousel-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 14px;
+}
+
+#contacts .project-carousel-links a {
+  padding: 12px 22px;
+  color: #f8efff;
+  border: 1px solid #ffffff2b;
+  border-radius: 999px;
+  background: #161323a6;
+  text-decoration: none;
+}
+
+#contacts .project-carousel-links a:hover,
+#contacts .project-carousel-links a:focus-visible {
+  background: #ff4fae2e;
+}
+
+#projects-react .project-aurora-content {
+  position: relative;
+  z-index: 2;
+}
+
+#projects-react .project-aurora-grid {
+  display: none;
+}
+
+#projects-react .project-aurora-blob {
+  display: none;
+}
+
+#projects-react .project-aurora-blob-pink {
+  top: -18%;
+  left: 8%;
+  background: #ff4fae;
+}
+
+#projects-react .project-aurora-blob-purple {
+  right: 6%;
+  bottom: -20%;
+  background: #655cff;
+}
+
+#projects-react .project-timeline {
+  position: relative;
+  height: 800px;
+  isolation: isolate;
+  overflow: hidden;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+}
+
+#projects-react .project-timeline::before {
+  display: none;
+}
+#projects-react .project-orbit-plane { --orbit-radius: 200; height: 600px; top: 40px; }
+
+#projects-react .project-orbit-node,
+#projects-react .project-orbit-hub {
+  box-shadow: 0 0 12px #a78bfab3, 0 0 28px #a78bfa59;
+}
+
+#projects-react .project-orbit-node {
+  border-color: #b9a4ff;
+}
+@media (max-width: 600px) {
+  #projects-react .project-orbit-plane { --orbit-radius: 95; }
+  #projects-react .project-carousel-arrow-left { left: 6px; }
+  #projects-react .project-carousel-arrow-right { right: 6px; }
+  #projects-react .project-carousel-grid,
+  #projects-react .project-carousel-grid-three { grid-template-columns: 1fr; }
+  #projects-react .project-carousel-content { padding-right: 56px; padding-left: 56px; }
+  #projects-react .interest-explorer { padding: 72px 46px 80px; }
+  #projects-react .interest-explorer-stage { grid-template-columns: 1fr; gap: 18px; }
+  #projects-react .interest-explorer-heading { margin-bottom: 24px; }
+  #projects-react .interest-option { min-height: 74px; padding: 12px; }
+  #projects-react .interest-option-icon { width: 40px; height: 40px; }
+  #projects-react .interest-option-copy strong { font-size: 0.88rem; overflow-wrap: anywhere; }
+  #projects-react .interest-option-copy small { display: none; }
+  #projects-react .interest-option-arrow { display: none; }
+  #projects-react .interest-feature { min-height: 360px; padding: 22px 16px; }
+  #projects-react .interest-feature-art { width: 150px; height: 150px; }
+  #projects-react .interest-feature-ring-outer { width: 146px; height: 146px; }
+  #projects-react .interest-feature-ring-inner { width: 108px; height: 108px; }
+  #projects-react .interest-feature-core { width: 72px; height: 72px; border-radius: 22px; }
+  #projects-react .interest-feature-core svg { width: 32px; height: 32px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  #projects-react .project-carousel-view { animation: none !important; }
+  #projects-react *, #projects-react *::before, #projects-react *::after { animation: none !important; transition: none !important; }
+}

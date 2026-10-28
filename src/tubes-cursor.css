@@ -1,0 +1,33 @@
+#tubes-cursor-react {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  overflow: hidden;
+  pointer-events: none;
+  /* Black pixels from the WebGL canvas should not tint the panel borders. */
+  mix-blend-mode: screen;
+}
+
+#tubes-cursor-react canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+}
+
+main > section > *,
+#hero-react,
+#projects > * {
+  position: relative;
+  z-index: 30;
+}
+
+.reveal.visible {
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #tubes-cursor-react {
+    display: none;
+  }
+}

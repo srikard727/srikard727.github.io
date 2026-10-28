@@ -62,58 +62,6 @@ if (typewriterHeading) {
 }
 
 const heroSection = document.querySelector(".hero");
-const navLinks = Array.from(document.querySelectorAll(".site-nav a[href^='#']"));
-const sections = navLinks
-  .map((link) => document.querySelector(link.getAttribute("href")))
-  .filter(Boolean);
-const accentColor =
-  getComputedStyle(document.documentElement).getPropertyValue("--accent").trim() ||
-  "#fa4d4d";
-
-const progressBar = document.createElement("div");
-progressBar.setAttribute("aria-hidden", "true");
-progressBar.style.position = "fixed";
-progressBar.style.left = "0";
-progressBar.style.top = "0";
-progressBar.style.height = "3px";
-progressBar.style.width = "0";
-progressBar.style.background = accentColor;
-progressBar.style.zIndex = "999";
-progressBar.style.transition = "width 120ms ease";
-document.body.append(progressBar);
-
-const updateActiveNav = () => {
-  if (!sections.length) {
-    return;
-  }
-
-  const scrollPosition = window.scrollY + window.innerHeight * 0.35;
-  let activeIndex = 0;
-
-  sections.forEach((section, index) => {
-    if (scrollPosition >= section.offsetTop) {
-      activeIndex = index;
-    }
-  });
-
-  navLinks.forEach((link, index) => {
-    if (index === activeIndex) {
-      link.style.color = accentColor;
-      link.style.borderBottom = `2px solid ${accentColor}`;
-      link.style.paddingBottom = "2px";
-    } else {
-      link.style.color = "";
-      link.style.borderBottom = "";
-      link.style.paddingBottom = "";
-    }
-  });
-};
-
-const updateScrollProgress = () => {
-  const scrollable = document.documentElement.scrollHeight - window.innerHeight;
-  const progress = scrollable > 0 ? window.scrollY / scrollable : 0;
-  progressBar.style.width = `${Math.min(1, Math.max(0, progress)) * 100}%`;
-};
 
 const updateHeroParallax = () => {
   if (!heroSection || prefersReducedMotion.matches) {
@@ -132,19 +80,11 @@ const handleScroll = () => {
 
   isTicking = true;
   window.requestAnimationFrame(() => {
-    updateScrollProgress();
-    updateActiveNav();
     updateHeroParallax();
     isTicking = false;
   });
 };
 
-updateScrollProgress();
-updateActiveNav();
 updateHeroParallax();
 
 window.addEventListener("scroll", handleScroll, { passive: true });
-window.addEventListener("resize", () => {
-  updateScrollProgress();
-  updateActiveNav();
-});
