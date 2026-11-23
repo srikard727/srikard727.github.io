@@ -1,42 +1,120 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Personal Website</title>
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-  <div id="tubes-cursor-react" aria-hidden="true"></div>
-  <main>
-    <section class="hero" id="home">
-      <div id="hero-react"></div>
-    </section>
-
-    <section id="projects" class="content-section reveal" aria-label="Interests, languages, and projects">
-      <div id="projects-react"></div>
-      <noscript><p>Projects: Multiplayer Tetris Game, DangDezeDubiousDimensions, Foodie App, Glass RFQ Extraction, and Loan Default Prediction. Enable JavaScript to explore the interactive project orbit.</p></noscript>
-    </section>
-
-    <section id="blog" class="content-section reveal">
-      <h2>Blog</h2>
-    </section>
-
-    <section id="contacts" class="content-section contacts-section reveal">
-      <div class="contact-panel">
-        <p class="project-carousel-kicker">LET'S CONNECT</p>
-        <h2>Find me around the web</h2>
-        <div class="project-carousel-links">
-          <a href="https://github.com/srikard727" target="_blank" rel="noopener noreferrer">GitHub</a>
-          <a href="https://www.linkedin.com/in/srikar-devesetti-1a689a205/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-          <a href="https://linktr.ee/yukiveei" target="_blank" rel="noopener noreferrer">Partner's link</a>
-        </div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light" />
+    <meta name="theme-color" content="#f5f3ed" />
+    <meta name="description" content="Srikar Devesetti is a software engineer focused on backend systems, applied AI, and building practical software. Explore selected projects and get in touch." />
+    <title>Srikar Devesetti — Software Engineer</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header" id="top">
+      <div class="shell header-inner">
+        <a class="brand" href="#top" aria-label="Srikar Devesetti, back to top">
+          <span class="brand-mark" aria-hidden="true">sd<span>.</span></span>
+          <span class="brand-details">Srikar Devesetti <small>Software engineer</small></span>
+        </a>
+        <nav class="site-nav" aria-label="Primary navigation">
+          <a href="#work">Work</a>
+          <a href="#about">About</a>
+          <a href="#skills">Skills</a>
+          <a class="nav-contact" href="#contact">Get in touch <span aria-hidden="true">↗</span></a>
+        </nav>
       </div>
-    </section>
-  </main>
-  <script type="module" src="script.js"></script>
-  <script type="module" src="/src/projects.tsx"></script>
-  <script type="module" src="/src/hero.tsx"></script>
-  <script type="module" src="/src/tubes-entry.tsx"></script>
-</body>
+    </header>
+
+    <main id="main">
+      <section class="hero shell" aria-labelledby="hero-title">
+        <div class="hero-main">
+          <p class="overline"><span class="overline-rule" aria-hidden="true"></span> SOFTWARE ENGINEERING · APPLIED AI</p>
+          <h1 id="hero-title">Building systems<br />that <em>make sense.</em></h1>
+          <p class="hero-lede">Hi, I'm Srikar. I enjoy turning ambitious ideas into useful, reliable software—especially where backend engineering and machine learning meet.</p>
+          <div class="hero-actions">
+            <a class="primary-link" href="#work">Explore my work <span aria-hidden="true">↗</span></a>
+            <a class="secondary-link" href="https://github.com/srikard727" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+          </div>
+        </div>
+        <aside class="hero-aside" aria-label="What I focus on">
+          <div class="aside-heading"><span>THE SHORT VERSION</span><span>001 / 004</span></div>
+          <div class="aside-lead">Curious by nature.<br />Engineer by practice.</div>
+          <div class="aside-index">
+            <div><span>01</span><p>Reliable backend systems</p></div>
+            <div><span>02</span><p>Practical AI &amp; machine learning</p></div>
+            <div><span>03</span><p>Thoughtful user experiences</p></div>
+          </div>
+          <div class="aside-bottom"><span>BASED IN THE BAY AREA</span><span class="orbit-dot" aria-hidden="true"></span></div>
+        </aside>
+      </section>
+
+      <section id="work" class="work-section" aria-labelledby="work-title">
+        <div class="shell">
+          <div class="section-heading">
+            <div><p class="section-kicker">01 / SELECTED WORK</p><h2 id="work-title">Projects worth <em>opening.</em></h2></div>
+            <p>Experiments, systems, and real-world problems. A selection of what I've built and what I'm improving.</p>
+          </div>
+          <div class="projects-grid">
+            <article class="project-card project-card-featured">
+              <div class="project-topline"><span class="project-number">01 / 05</span><span class="project-status">Completed</span></div>
+              <div class="project-content"><span class="project-category">SYSTEMS / GAME ENGINEERING</span><h3>Multiplayer<br />Tetris</h3><p>A multiplayer Tetris game built with Rust and Bevy. Bevy Lightyear handles networking, while WASM connects the game and web experience.</p></div>
+              <div class="project-bottom"><span>Rust &nbsp;·&nbsp; Bevy &nbsp;·&nbsp; WASM</span><a href="https://github.com/usf272spring26/milestone-4-SirPopGhost" target="_blank" rel="noopener noreferrer" aria-label="View Multiplayer Tetris on GitHub">View project <span aria-hidden="true">↗</span></a></div>
+              <div class="tetris-art" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+            </article>
+
+            <article class="project-card project-card-accent">
+              <div class="project-topline"><span class="project-number">02 / 05</span><span class="project-status">In progress</span></div>
+              <div class="project-content"><span class="project-category">AI / BACKEND</span><h3>Foodie App</h3><p>Restaurant recommendations that combine location data with sentence-transformer embeddings to match natural-language requests to nearby places.</p></div>
+              <div class="project-bottom"><span>FastAPI &nbsp;·&nbsp; Embeddings &nbsp;·&nbsp; Foursquare</span><a href="https://github.com/srikard727/foodie-app" target="_blank" rel="noopener noreferrer" aria-label="View Foodie App on GitHub">View project <span aria-hidden="true">↗</span></a></div>
+            </article>
+
+            <article class="project-card">
+              <div class="project-topline"><span class="project-number">03 / 05</span><span class="project-status">Completed</span></div>
+              <div class="project-content"><span class="project-category">AI / AUTOMATION</span><h3>Glass RFQ<br />Extraction</h3><p>Extracting structured manufacturing specifications from quote-request emails and attachments, with validation and human review for ambiguous fields.</p></div>
+              <div class="project-bottom"><span>Python &nbsp;·&nbsp; LangGraph &nbsp;·&nbsp; OCR</span><a href="https://github.com/srikard727/intern-extraction-task" target="_blank" rel="noopener noreferrer" aria-label="View Glass RFQ Extraction on GitHub">View project <span aria-hidden="true">↗</span></a></div>
+            </article>
+
+            <article class="project-card">
+              <div class="project-topline"><span class="project-number">04 / 05</span><span class="project-status">In progress</span></div>
+              <div class="project-content"><span class="project-category">MACHINE LEARNING / WEB</span><h3>Loan Default<br />Prediction</h3><p>An XGBoost risk-scoring model backed by a FastAPI service and React dashboard, with explainability, portfolio monitoring, and audit logs.</p></div>
+              <div class="project-bottom"><span>XGBoost &nbsp;·&nbsp; FastAPI &nbsp;·&nbsp; React</span><a href="https://github.com/srikard727/loan-defaulter" target="_blank" rel="noopener noreferrer" aria-label="View Loan Default Prediction on GitHub">View project <span aria-hidden="true">↗</span></a></div>
+            </article>
+
+            <article class="project-card">
+              <div class="project-topline"><span class="project-number">05 / 05</span><span class="project-status">Completed</span></div>
+              <div class="project-content"><span class="project-category">GAME DEVELOPMENT / EXPERIMENTATION</span><h3>DangDeze<br />DubiousDimensions</h3><p>A Godot project exploring quaternions, shader effects, movement, and custom grappling-hook physics.</p></div>
+              <div class="project-bottom"><span>Godot &nbsp;·&nbsp; Shaders &nbsp;·&nbsp; Physics</span><a href="https://github.com/ErneElg162/DangDezeDubiousDimensions" target="_blank" rel="noopener noreferrer" aria-label="View DangDezeDubiousDimensions on GitHub">View project <span aria-hidden="true">↗</span></a></div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="about" class="about-section" aria-labelledby="about-title">
+        <div class="shell about-layout">
+          <div><p class="section-kicker">02 / ABOUT ME</p><h2 id="about-title">The work is technical.<br /><em>The curiosity is personal.</em></h2></div>
+          <div class="about-copy">
+            <p>I'm studying computer science with a concentration in AI at the University of San Francisco. I enjoy learning how systems work beneath the surface, then using that understanding to build something useful.</p>
+            <p>My interests span backend engineering, applied machine learning, and the decisions that make software clear, resilient, and enjoyable to use.</p>
+            <div class="about-facts"><div><strong>USF</strong><span>Computer Science · AI concentration</span></div><div><strong>2027</strong><span>Expected graduation</span></div></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="skills" class="skills-section shell" aria-labelledby="skills-title">
+        <div class="skills-heading"><div><p class="section-kicker">03 / THE TOOLBOX</p><h2 id="skills-title">Tools of the <em>trade.</em></h2></div><p>Languages and technologies I've used across projects and coursework.</p></div>
+        <div class="skills-list">
+          <div><span class="skills-index">01</span><h3>Languages</h3><p>Python, Java, Rust, C, C++, HTML &amp; CSS</p></div>
+          <div><span class="skills-index">02</span><h3>Backend &amp; web</h3><p>FastAPI, React, REST APIs, JavaScript</p></div>
+          <div><span class="skills-index">03</span><h3>Machine learning</h3><p>PyTorch, XGBoost, sentence transformers, LangGraph</p></div>
+        </div>
+      </section>
+
+      <section id="contact" class="contact-section" aria-labelledby="contact-title">
+        <div class="shell contact-layout"><div><p class="section-kicker">04 / SAY HELLO</p><h2 id="contact-title">Have something<br /><em>interesting in mind?</em></h2><p>I enjoy meeting people, exchanging ideas, and talking about what we're building.</p></div><div class="contact-links"><a href="https://www.linkedin.com/in/srikar-devesetti-1a689a205/" target="_blank" rel="noopener noreferrer">LinkedIn <span aria-hidden="true">↗</span></a><a href="https://github.com/srikard727" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a></div></div>
+      </section>
+    </main>
+
+    <footer class="site-footer"><div class="shell footer-inner"><span>© 2026 Srikar Devesetti</span><span>Built with care, not spectacle.</span><a href="https://linktr.ee/yukiveei" target="_blank" rel="noopener noreferrer">My partner's link ↗</a><a href="#top">Back to top ↑</a></div></footer>
+  </body>
 </html>
