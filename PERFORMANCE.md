@@ -1,0 +1,5 @@
+# Performance review — November 2026
+
+The prior root `index.html` loaded `script.js`, `src/projects.tsx`, `src/hero.tsx`, and `src/tubes-entry.tsx`. It mounted three React roots. The hero rendered a `SparklesCore` particle canvas with a density of 360. The projects orbital timeline updated React state every 50 ms during rotation, and used `getComputedStyle` for each node's position calculation. The original stylesheet hid `.reveal` sections until an IntersectionObserver toggled them. These are plausible jank and delayed-visibility sources; actual device-specific frame times were not measured.
+
+The refreshed page is static HTML + CSS with no JS execution, no external requests, and no content-hiding entrance animation. For a local benchmark, run `python3 -m http.server 4173`, open Chrome DevTools > Performance, record a cold load and scroll, and compare against the original repo's Vite build on the same device. Record LCP, INP, CLS, and total JS transferred. The design preview confirms only the new static page, not the original repo's production build.
